@@ -1,15 +1,5 @@
-def call() {
-    pipeline {
-        agent {
-            label 'iteration-1'
-        }
-
-        stages {
-            stage('Compile/Build') {
-                steps {
-                    sh 'echo compile'
-                }
-            }
-        }
+def compile() {
+    if (app_lang == "nodejs") {
+        sh 'npm install'
     }
 }
